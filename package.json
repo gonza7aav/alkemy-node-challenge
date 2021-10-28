@@ -1,0 +1,34 @@
+{
+  "name": "alkemy-node-challenge",
+  "version": "1.0.0",
+  "description": "Challenge Backend Node.js de Alkemy",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "set NODE_ENV=development&& nodemon index.js",
+    "test": "set NODE_ENV=test&& mocha tests/ --recursive --delay --exit",
+    "start": "set NODE_ENV=production&& node index.js"
+  },
+  "author": "Aguirre Gonzalo Adolfo <gonza.a.aguirre@gmail.com> (https://github.com/gonza7aav)",
+  "dependencies": {
+    "@sendgrid/mail": "7.5.0",
+    "bcryptjs": "2.4.3",
+    "cookie-parser": "1.4.5",
+    "express": "4.17.1",
+    "express-validator": "6.13.0",
+    "jsonwebtoken": "8.5.1",
+    "mysql2": "2.3.2",
+    "sequelize": "6.8.0"
+  },
+  "devDependencies": {
+    "chai": "4.3.4",
+    "chai-http": "4.3.0",
+    "dotenv": "10.0.0",
+    "eslint": "8.1.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.25.2",
+    "mocha": "9.1.3",
+    "nodemon": "2.0.14",
+    "sequelize-cli": "6.2.0"
+  }
+}
