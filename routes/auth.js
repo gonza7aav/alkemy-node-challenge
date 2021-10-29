@@ -5,7 +5,7 @@ const Token = require('../controllers/Token');
 const { User } = require('../models');
 const userValidator = require('../middleware/validators/user');
 
-// TODO: Confirmaciones de usuario.
+// TODO: Confirmaciones de usuario
 // Cuando un usuario se registra se lo agrega a una tabla "unconfirmedUsers"
 // y se le envia en email de bienvenida con además un enlace para confirmar
 // el email registrado. Se necesitaria otro endpoint donde recibe el código

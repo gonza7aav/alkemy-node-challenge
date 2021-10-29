@@ -13,5 +13,9 @@ module.exports = (req, res, next) => {
   // En caso de ser un token inválido result será null
   if (result === null) res.sendStatus(403);
 
+  // TODO: Control sobre el usuario
+  // Ya sabemos que tiene el token de acceso y además es válido
+  // ahora debemos preguntar si tiene los permisos para la operación
+
   return next();
 };
