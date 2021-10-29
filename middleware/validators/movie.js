@@ -55,8 +55,7 @@ const validateCreate = () => {
     },
     genres: {
       in: ['body'],
-      optional: true,
-      isArray: true,
+      isArray: { options: { min: 1 } },
       errorMessage: 'El arreglo de géneros debe tener elementos',
     },
   };
@@ -98,8 +97,7 @@ const validateUpdate = () => {
     },
     genres: {
       in: ['body'],
-      optional: true,
-      isArray: true,
+      isArray: { options: { min: 1 } },
       errorMessage: 'El arreglo de géneros debe tener elementos',
     },
   };

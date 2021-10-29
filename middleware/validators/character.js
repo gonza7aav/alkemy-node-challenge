@@ -52,8 +52,7 @@ const validateCreate = () => {
     },
     movies: {
       in: ['body'],
-      optional: true,
-      isArray: true,
+      isArray: { options: { min: 1 } },
       errorMessage: 'El arreglo de películas debe tener elementos',
     },
   };
@@ -88,8 +87,7 @@ const validateUpdate = () => {
     },
     movies: {
       in: ['body'],
-      optional: true,
-      isArray: true,
+      isArray: { options: { min: 1 } },
       errorMessage: 'El arreglo de películas debe tener elementos',
     },
   };
