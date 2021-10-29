@@ -187,6 +187,11 @@ Se eliminará de las cookies el token de actualización `refreshToken`
 Posibles respuestas:
 
 - `200 OK`
+
+  ```http
+  Set-Cookie: refreshToken=; Path=/auth/token; Expires=Thu, 01 Jan 1970 00:00:00 GMT
+  ```
+
 - `500 Internal Server Error`
 
 ### Listado de Personajes
