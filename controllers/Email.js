@@ -9,11 +9,9 @@ const sendWelcomeEmail = async (address) => {
     from: process.env.SENDGRID_SENDER,
     subject: 'Bienvenido a la API Disney!',
     // Lo que aparecerá si ve el email en formato plano
-    text: 'Para más información sobre como usarla te recomendamos leer la documentación',
+    text: 'Para más información sobre su funcionamiento le recomendamos visitar la página del repositorio.',
     // Lo que aparecerá si ve el email en formato HTML
-    html:
-      'Para más información sobre su funcionamiento recomendamos visitar la ' +
-      '<a href="https://github.com/gonza7aav/alkemy-node-challenge">página del repositorio</a>.',
+    html: 'Para más información sobre su funcionamiento le recomendamos visitar la <a href="https://github.com/gonza7aav/alkemy-node-challenge">página del repositorio</a>.',
   };
 
   try {
