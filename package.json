@@ -1,6 +1,6 @@
 {
   "name": "alkemy-node-challenge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Challenge Backend Node.js de Alkemy",
   "main": "index.js",
   "scripts": {

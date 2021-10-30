@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
   const result = Token.verifyAccessToken(token);
 
   // En caso de ser un token inválido result será null
-  if (result === null) res.sendStatus(403);
+  if (result === null) return res.sendStatus(403);
 
   // TODO: Control sobre el usuario
   // Ya sabemos que tiene el token de acceso y además es válido
