@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+
 const express = require('express');
 const { sequelize } = require('../models');
 

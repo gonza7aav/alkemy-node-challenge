@@ -107,6 +107,7 @@ const validateDelete = () => {
       errorMessage: 'El uuid es inválido',
     },
   };
+
   return validateSchema(schema);
 };
 

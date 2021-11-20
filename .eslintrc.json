@@ -11,13 +11,9 @@
   "rules": {
     "comma-dangle": "off",
     "function-paren-newline": "off",
-    "global-require": "warn",
     "implicit-arrow-linebreak": "off",
-    "import/no-dynamic-require": "warn",
     "linebreak-style": "off",
     "no-console": "off",
-    "no-unused-vars": "warn",
-    "operator-linebreak": "off",
-    "strict": "off"
+    "operator-linebreak": "off"
   }
 }

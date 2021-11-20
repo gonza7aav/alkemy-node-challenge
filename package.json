@@ -4,7 +4,6 @@
   "description": "Challenge Backend Node.js de Alkemy",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
     "dev": "set NODE_ENV=development&& nodemon index.js",
     "start": "set NODE_ENV=production&& node index.js"
   },
