@@ -6,6 +6,10 @@ const createAccessToken = (payload) =>
 const createRefreshToken = (payload) =>
   jwt.sign(payload, process.env.JWT_REFRESH_SECRET, { expiresIn: '7d' });
 
+// Este token sin expiración será usado en los test
+const createAccessTokenWithoutExpiration = (payload) =>
+  jwt.sign(payload, process.env.JWT_ACCESS_SECRET);
+
 // Verifica que el token que le fue dado sea válido
 // Retorna lo que fue cargado en el mismo o,
 // en caso de que fuese inválido, null
@@ -42,6 +46,7 @@ const deleteRefreshTokenCookie = (response) => {
 module.exports = {
   createAccessToken,
   createRefreshToken,
+  createAccessTokenWithoutExpiration,
   verifyAccessToken,
   verifyRefreshToken,
   sendRefreshTokenCookie,
