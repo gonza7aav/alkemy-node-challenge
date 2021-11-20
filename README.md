@@ -56,7 +56,11 @@ Se necesitará un archivo `.env` en la raiz del proyecto con las siguientes vari
 
 Además se han agregado las tablas que manejan las relaciones M:N y la autorización del uso de la API.
 
+<div align='center'>
+
 ![Modelo de la base de datos](database.png)
+
+</div>
 
 ### Autenticación de Usuarios
 
