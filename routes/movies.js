@@ -8,6 +8,10 @@ const { Movie, Genre, Character } = require('../models');
 // diferentes condiciones para validarlas o pasos distintos entre estas,
 // habria que cambiar mucho código. Es por esto que lo repetimos
 
+// Función que devuelve null si el parámetro es undefined
+// es decir si no fue enviado en el body entonces es null
+const valueOrNull = (x) => (typeof x === 'undefined' ? null : x);
+
 // Listado - Búsqueda - Detalles
 router.get(
   '/',
@@ -93,7 +97,12 @@ router.post('/', auth, movieValidator.validateCreate(), async (req, res) => {
 
     // Insertamos la nueva película borrandole el atributo UUID (exista o no)
     // de esta forma se lo asigna automaticamente Sequelize
-    const newMovie = await Movie.create({ ...req.body, uuid: undefined });
+    const newMovie = await Movie.create({
+      title: req.body.title,
+      image: valueOrNull(req.body.image),
+      creationDate: new Date(req.body.creationDate),
+      score: req.body.score,
+    });
 
     // Insertamos las relaciones con los géneros
     await newMovie.addGenre(genres);
@@ -127,14 +136,10 @@ router.put('/', auth, movieValidator.validateUpdate(), async (req, res) => {
       });
     }
 
-    // Función que devuelve null si el parámetro es undefined
-    // es decir si no fue enviado en el body entonces es null
-    const valueOrNull = (x) => (typeof x === 'undefined' ? null : x);
-
     await movie.update({
       title: req.body.title,
       image: valueOrNull(req.body.image),
-      creationDate: req.body.creationDate,
+      creationDate: new Date(req.body.creationDate),
       score: req.body.score,
     });
 

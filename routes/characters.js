@@ -8,6 +8,10 @@ const { Character, Movie, Genre } = require('../models');
 // diferentes condiciones para validarlas o pasos distintos entre estas,
 // habria que cambiar mucho código. Es por esto que lo repetimos
 
+// Función que devuelve null si el parámetro es undefined
+// es decir si no fue enviado en el body entonces es null
+const valueOrNull = (x) => (typeof x === 'undefined' ? null : x);
+
 // Listado - Búsqueda - Detalles
 router.get(
   '/',
@@ -95,8 +99,11 @@ router.post(
       // Insertamos el nuevo personaje borrandole el atributo UUID (exista o no)
       // de esta forma se lo asigna automaticamente Sequelize
       const newCharacter = await Character.create({
-        ...req.body,
-        uuid: undefined,
+        image: valueOrNull(req.body.image),
+        name: req.body.name,
+        age: valueOrNull(req.body.age),
+        weight: valueOrNull(req.body.weight),
+        history: valueOrNull(req.body.history),
       });
 
       // Insertamos las relaciones con las películas
@@ -131,10 +138,6 @@ router.put('/', auth, characterValidator.validateUpdate(), async (req, res) => {
         errors: ['El arreglo de películas contiene al menos una uuid inválida'],
       });
     }
-
-    // Función que devuelve null si el parámetro es undefined
-    // es decir si no fue enviado en el body entonces es null
-    const valueOrNull = (x) => (typeof x === 'undefined' ? null : x);
 
     await character.update({
       image: valueOrNull(req.body.image),
