@@ -17,6 +17,7 @@ Se necesitará un archivo `.env` en la raiz del proyecto con las siguientes vari
 - `JWT_REFRESH_SECRET` : Clave secreta para firmar los token de actualización
 - `SENDGRID_API_KEY` : Clave para mandar mails por SendGrid
 - `SENDGRID_SENDER` : Email que figurará como emisor de los emails
+- `NON_PRODUCTION_EMAIL_RECEIVER` : Email que recibirá los email de registro cuando no se corre en producción
 
 ## Requerimientos técnicos
 
